@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} signup {% endblock %}
+
+{% block body_content %}
+<div class="row">
+    <div class="col-6 mx-auto">
+            <form action="" method="POST">
+                {% csrf_token %}
+                {% load bootstrap_tags %}
+                {{form|as_bootstrap}}
+                <input type="submit" value="signup">
+                <a href={% url "login" %}>Login</a>
+            </form>
+    </div>
+</div>
+
+{% endblock %}
